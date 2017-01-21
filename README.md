@@ -3,9 +3,19 @@
 # Description
 I go really tired of walking a flight of stairs to push a button on the bridge for the x time. So I though: _if only I could use some web call to do that, hmmm_ Luckily we can!!!
 
+_Thanks to all the people in the references!!!_
+
+## Other nice stuff!
+ * [iBrew](https://github.com/Tristan79/iBrew) iKettle, iKettle 2.0 and Smarter Coffee Interface
+ * [iSamsungTV](https://github.com/Tristan79/iSamsungTV) the command line interface to Samsung TV series C, D, E, F and Blue Ray Disc Players with Smart Hub feature.
+ * [Medisana Scale](https://github.com/keptenkurk/BS440) [Domoticz](http://domoticz.com/) bridge to Medisana BS440, BS430,... weight scales.
+ * [Xiaomi Mi Plant Sensor](https://github.com/Tristan79/miflora) with [Domoticz](http://domoticz.com/) bridge
+ * [Vento](https://github.com/Tristan79/Vento)  The itho, duco, orcon, zehnder, storkair: arduino [mysensors 2.0](https://www.mysensors.org) controller!!!
+
+
 ## Rooting!
 
-First pin2pwn your way into the bridge... see the references for more detail information. This is a fast walkthrough! Read the references first!!! 
+First pin2pwn your way into the bridge... see all the references for more detail information. This is a fast walkthrough! Read the references first!!! 
 
 Let's go! Open it up!
 
@@ -23,9 +33,9 @@ Make sure it's jumper selects 3.3v and connect it with some dupont wires,
 
 ```
 USBSERIAL  <--> BRIDGE
-GRD             1
-TX              4 (RX)
-RX              5 (TX)
+GRD        <--> 1
+TX         <--> 4 (RX)
+RX         <--> 5 (TX)
 ```
 
 Use a serial monitor/terminal app (I used the one build in Arduino) to look if you see any chatter. If so short it before it loads the flash... (look for the word bee ;-)
@@ -344,7 +354,7 @@ echo 0 >/sys/class/leds/bsb002\:blue\:network/brightness
 #### Always accept
 
 ```
-echo "[btn_link,'pressed']" > /var/hue-ipbridge/button_in
+echo "[btn_link,pressed]" > /var/hue-ipbridge/button_in
 ```
 
 Just never release it :-)
@@ -354,8 +364,8 @@ Possible to add it to: /etc/rc.local
 ### Simulate bridge press
 
 ```
-echo "[btn_link,'pressed']" > /var/hue-ipbridge/button_in
-echo "[btn_link,'released']" > /var/hue-ipbridge/button_in
+echo "[btn_link,pressed]" > /var/hue-ipbridge/button_in
+echo "[btn_link,released]" > /var/hue-ipbridge/button_in
 ```
 
 ### The Server
@@ -382,8 +392,8 @@ class SimpleHTTPRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         f = StringIO()
         f.write("<html>\n<title>HUE Soft Link Button</title>\n")
         f.write("<body>Toggled!</body>\n</html>\n")
-        os.system("echo \"[btn_link,'pressed']\" > /var/hue-ipbridge/button_in")
-        os.system("echo \"[btn_link,'released']\" > /var/hue-ipbridge/button_in")
+        os.system("echo \"[btn_link,pressed]\" > /var/hue-ipbridge/button_in")
+        os.system("echo \"[btn_link,released]\" > /var/hue-ipbridge/button_in")
         length = f.tell()
         f.seek(0)
         self.send_response(200)
@@ -407,8 +417,16 @@ if __name__ == '__main__':
 ### Firewall rule
 
 ```
-echo -e "iptables -I INPUT -p tcp --dport 8000 --syn -j ACCEPT" > /etc/rc.local
+echo -e "iptables -I INPUT -p tcp --dport 8000 --syn -j ACCEPT" >> /etc/rc.local
 ```
+
+### Persistence
+
+```
+echo -e "python /etc/ButtonLink.py" >> /etc/rc.local
+```
+
+
 
 # References
 
