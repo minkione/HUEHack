@@ -5,13 +5,15 @@ I go really tired of walking a flight of stairs to push a button on the bridge f
 
 ## Rooting!
 
-First pin2pwn your way into the bridge... see the references for more detail information. Fast walkthrough! Read the references first!!! Let's go! Open it up!
+First pin2pwn your way into the bridge... see the references for more detail information. This is a fast walkthrough! Read the references first!!! 
+
+Let's go! Open it up!
 
 ![screw](https://raw.githubusercontent.com/Tristan79/HUEHACK/master/screw.png)
 
 Solder a header to it (or not, but makes life easier :-)
 
-![pins](https://raw.githubusercontent.com/Tristan79/HUEHACK/master/pins.png)
+![pins](https://raw.githubusercontent.com/Tristan79/HUEHACK/master/pins.jpg)
 
 Need on of these (1.50 euro :-)
 
@@ -380,7 +382,8 @@ class SimpleHTTPRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         f = StringIO()
         f.write("<html>\n<title>HUE Soft Link Button</title>\n")
         f.write("<body>Toggled!</body>\n</html>\n")
-        # toggle button...
+        os.system("echo \"[btn_link,'pressed']\" > /var/hue-ipbridge/button_in")
+        os.system("echo \"[btn_link,'released']\" > /var/hue-ipbridge/button_in")
         length = f.tell()
         f.seek(0)
         self.send_response(200)
