@@ -370,6 +370,13 @@ echo "[btn_link,released]" > /var/hue-ipbridge/button_in
 
 ### The Server
 
+
+```
+nano /etc/ButtonLink.py
+```
+
+Add the following code
+
 ```
 __version__ = "0.1"
 __all__ = ["ButtonLink"]
@@ -426,7 +433,23 @@ echo -e "iptables -I INPUT -p tcp --dport 8000 --syn -j ACCEPT" >> /etc/rc.local
 echo -e "python /etc/ButtonLink.py" >> /etc/rc.local
 ```
 
+### Usage
 
+Surf to 
+
+```
+http://IP_HUE_BRIGE:8000/
+```
+
+to toggle the button...
+
+# Final Though
+
+You're HUE bridges is rooted so you can probably do more fun stuff with it. Note that a factory reset will wipe any trace of any mod you made. It will survive an update (so far)
+
+Well thats-sa-bout-it...
+
+Signed TRiXWooD
 
 # References
 
