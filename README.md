@@ -5,6 +5,8 @@ I go really tired of walking a flight of stairs to push a button on the bridge f
 
 _Thanks to all the people in the references!!!_
 
+Contact <tristan@monkeycat.nl>!
+
 ## Other nice stuff!
  * [iBrew](https://github.com/Tristan79/iBrew) iKettle, iKettle 2.0 and Smarter Coffee Interface
  * [iSamsungTV](https://github.com/Tristan79/iSamsungTV) the command line interface to Samsung TV series C, D, E, F and Blue Ray Disc Players with Smart Hub feature.
