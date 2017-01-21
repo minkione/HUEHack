@@ -8,9 +8,9 @@ _Thanks to all the people in the references!!!_
 ## Other nice stuff!
  * [iBrew](https://github.com/Tristan79/iBrew) iKettle, iKettle 2.0 and Smarter Coffee Interface
  * [iSamsungTV](https://github.com/Tristan79/iSamsungTV) the command line interface to Samsung TV series C, D, E, F and Blue Ray Disc Players with Smart Hub feature.
- * [Medisana Scale](https://github.com/keptenkurk/BS440) [Domoticz](http://domoticz.com/) bridge to Medisana BS440, BS430,... weight scales.
+ * [Medisana Scale](https://github.com/keptenkurk/BS440) with [Domoticz](http://domoticz.com/) bridge to Medisana BS440, BS430,... weight scales.
  * [Xiaomi Mi Plant Sensor](https://github.com/Tristan79/miflora) with [Domoticz](http://domoticz.com/) bridge
- * [Vento](https://github.com/Tristan79/Vento)  The itho, duco, orcon, zehnder, storkair: arduino [mysensors 2.0](https://www.mysensors.org) controller!!!
+ * [Vento](https://github.com/Tristan79/Vento) the itho, duco, orcon, zehnder, storkair: arduino [mysensors 2.0](https://www.mysensors.org) controller!!!
 
 
 ## Rooting!
