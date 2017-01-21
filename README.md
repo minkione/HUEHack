@@ -402,6 +402,7 @@ class SimpleHTTPRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         f.write("<html>\n<title>HUE Soft Link Button</title>\n")
         f.write("<body>Toggled!</body>\n</html>\n")
         os.system("echo \"[btn_link,pressed]\" > /var/hue-ipbridge/button_in")
+        time.sleep(1)
         os.system("echo \"[btn_link,released]\" > /var/hue-ipbridge/button_in")
         length = f.tell()
         f.seek(0)
