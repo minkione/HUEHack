@@ -35,7 +35,7 @@ Make sure it's jumper selects 3.3v and connect it with some dupont wires,
 
 ```
 USBSERIAL  <--> BRIDGE
-GRD        <--> 1
+GND        <--> 1 (GND)
 TX         <--> 4 (RX)
 RX         <--> 5 (TX)
 ```
